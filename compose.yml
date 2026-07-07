@@ -1,6 +1,7 @@
 services:
   reizouko:
     image: unmol637/reizouko:latest
+    container_name: reizouko
     network_mode: host
     restart: unless-stopped
     cap_add:
@@ -13,4 +14,4 @@ services:
       INTERVAL: 6h
       NAT64_DNS: 2a01:4f9:c010:3f02::1
     volumes:
-      - ./.data:/data
+      - ./data:/data
