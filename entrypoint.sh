@@ -54,7 +54,7 @@ download_all() {
             [0-9]*)
                 id=${name%%[!0-9]*}
                 echo "==> [$name] ID=$id"
-                gallery-dl --config "$GDL_CONF" --cache "$GDL_CACHE/cache.sqlite3" \
+                gallery-dl --config "$GDL_CONF" --cache-file "$GDL_CACHE/cache.sqlite3" \
                     -D "$dir" -o directory=[] \
                     "https://www.pixiv.net/en/users/$id" ;;
             *) echo "skip [$name]" ;;
