@@ -1,0 +1,16 @@
+services:
+  reizouko:
+    image: unmol637/reizouko:latest
+    network_mode: host
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    devices:
+      - /dev/fuse
+    environment:
+      INTERVAL: 6h
+      NAT64_DNS: 2a01:4f9:c010:3f02::1
+    volumes:
+      - ./.data:/data
